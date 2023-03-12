@@ -1,0 +1,59 @@
+<!-- CSS Made possible by: https://github.com/andybrewer/mvp/
+ _     _                         _
+| |__ (_) __ _ _ __ _ __   ___  (_) ___
+| '_ \| |/ _` | '__| '_ \ / _ \ | |/ _ \
+| |_) | | (_| | |  | | | |  __/_| | (_) |
+|_.___/ |\__,_|_|  |_| |_|\___(_|_|\___/
+    |__/
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="../static/img//favicon.ico" />
+    <link rel="stylesheet" href="../static/styles/mvp.css" />
+
+    <meta charset="utf-8" />
+    <meta name="description" content="My description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BjarneIO | QR Code</title>
+  </head>
+
+  <body>
+    <header class="socials">
+      <h1>QR Code Generator</h1>
+      <note>This page is for private use only.</note
+      >
+      <p>
+        <a href="/"><i>Back to Home</i></a>
+      </p>
+      
+      <section>
+        <form method="POST" action="/qr/" >
+          <header>
+              <img alt="qrcode" src="../static/img/qr.png" height="200">
+          </header>
+          <label for="url">Give in the redirection URL:</label>
+          <input type="text" id="url" name="url" size="28" placeholder="https://example.com">
+          <br>
+          <button type="submit" id="show">Submit</button>
+      </form>
+    </section>
+    
+      {% if code %}
+      <hr>
+      <section>
+        
+        
+        <p>
+          <img alt="qrcode" src="../static/codes/{{code}}.png" height="200">
+          <p> url is <a href="https://bjarne.io/qr/{{code}}">https://bjarne.io/qr/{{code}}</a> </p>
+        </p>
+      </section>
+      {% endif %}
+
+    </header>
+  </body>
+</html>

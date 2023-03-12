@@ -1,2 +1,2 @@
 # bjarne.io
-Code behind my portfolio site.
+the code behind my portfolio site

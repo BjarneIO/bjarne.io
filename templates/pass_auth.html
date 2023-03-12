@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>Hey! 👋</h1>
+    <p>Geef een passwoord in om verder te gaan.</p>
+  </header>
+
+  <div class="auth_form">
+    {% if error %}
+      {% if 'password' in error %}
+      <div class="error">
+        <p>Ongeldig paswoord.</p>
+      </div>
+      {% endif %}
+    {% endif %}
+    
+    <form method="post">
+      <input type="password" name="password" placeholder="Passwoord" required>
+      <input type="hidden" name="next" value="{{ next }}">
+      <input type="submit" value="Verder">
+    </form>
+  </div>
+
+{% endblock %}
